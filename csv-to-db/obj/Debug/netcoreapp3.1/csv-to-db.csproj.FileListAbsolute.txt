@@ -1,5 +1,4 @@
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\csv-to-db.exe
-C:\Users\maira\dev\CSV-to-DB\csv-to-db\obj\Debug\netcoreapp3.1\csv-to-db.csprojAssemblyReference.cache
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\obj\Debug\netcoreapp3.1\csv-to-db.AssemblyInfoInputs.cache
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\obj\Debug\netcoreapp3.1\csv-to-db.AssemblyInfo.cs
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\csv-to-db.deps.json
@@ -48,3 +47,6 @@ C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\maira\dev\CSV-to-DB\csv-to-db\obj\Debug\netcoreapp3.1\csv-to-db.csprojAssemblyReference.cache
+C:\Users\maira\dev\CSV-to-DB\csv-to-db\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+C:\Users\maira\dev\CSV-to-DB\csv-to-db\obj\Debug\netcoreapp3.1\csv-to-db.csproj.CoreCompileInputs.cache
