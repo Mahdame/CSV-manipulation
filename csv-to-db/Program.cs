@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Z.BulkOperations;
 
 namespace csv_to_db
 {
@@ -45,9 +46,15 @@ namespace csv_to_db
                 }
                 counter++;
             }
-            
-            var teste = contatos;
-            //var bulk = new BulkOperation<Contato>(connection);
+
+            connection.Open();
+
+            var bulk = new BulkOperation<Contato>(connection);
+
+            bulk.DestinationTableName = "Contatos";
+
+            bulk.BulkInsert();
+
             //bulk.ColumnInputExpression = c => new { c.FName, c.LName, c.Title, c.Email, c.Mobile, c.Address1, c.Address2, c.City, c.Zip, c.State, c.CountryId, c.Lang, c.Birthdate };
             //bulk.ColumnOutputExpression = c => c.Id;
             //bulk.ColumnPrimaryKeyExpression = c => c.Id;
