@@ -1,7 +1,5 @@
-﻿using CsvHelper.Configuration.Attributes;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace csv_to_db
 {
@@ -16,7 +14,8 @@ namespace csv_to_db
         public string Title { get; set; }
         [StringLength(100)]
         public string Email { get; set; }
-        public int Mobile { get; set; }
+        [StringLength(100)]
+        public string Mobile { get; set; }
         [StringLength(100)]
         public string Address1 { get; set; }
         [StringLength(100)]

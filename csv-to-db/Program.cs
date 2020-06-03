@@ -10,18 +10,14 @@ namespace csv_to_db
     {
         public static void Main()
         {
-            var connection = new SqlConnection(@"server=localhost,1433;database=csvtodb;User ID=SA;Password=1q2w3e4r!@#$");
-
-            //Contato contato = new Contato();
             List<Contato> contatos = new List<Contato>();
 
             string line;
             int counter = 0;
-
             string[] columns;
             string[] rows;
 
-            var file = new StreamReader(@"C:\Users\maira\dev\CSV-to-DB\csv-to-db\database.csv");
+            var file = new StreamReader(@"{caminho do arquivo .csv}");
 
             while ((line = file.ReadLine()) != null)
             {
@@ -41,24 +37,34 @@ namespace csv_to_db
                     contato.LName = rows[2];
                     contato.Title = rows[3];
                     contato.Email = rows[4];
+                    contato.Mobile = rows[5];
+                    contato.Address1 = rows[6];
+                    contato.Address2 = rows[7];
+                    contato.City = rows[8];
+                    contato.Zip = Convert.ToInt32(rows[9]);
+                    contato.State = rows[10];
+                    contato.CountryId = rows[11];
+                    contato.Lang = rows[12];
+                    contato.Birthdate = Convert.ToDateTime(rows[13]);
 
                     contatos.Add(contato);
                 }
                 counter++;
             }
 
+            var connection = new SqlConnection(@"{connection string}");
+
             connection.Open();
 
             var bulk = new BulkOperation<Contato>(connection);
 
             bulk.DestinationTableName = "Contatos";
+            bulk.ColumnInputExpression = c => new { c.FName, c.LName, c.Title, c.Email, c.Mobile, c.Address1, c.Address2, c.City, c.Zip, c.State, c.CountryId, c.Lang, c.Birthdate };
+            bulk.ColumnOutputExpression = c => c.Id;
+            bulk.ColumnPrimaryKeyExpression = c => c.Id;
 
-            bulk.BulkInsert();
-
-            //bulk.ColumnInputExpression = c => new { c.FName, c.LName, c.Title, c.Email, c.Mobile, c.Address1, c.Address2, c.City, c.Zip, c.State, c.CountryId, c.Lang, c.Birthdate };
-            //bulk.ColumnOutputExpression = c => c.Id;
-            //bulk.ColumnPrimaryKeyExpression = c => c.Id;
-            //bulk.BulkMerge(file);
+            bulk.BulkInsert(contatos);
+            //bulk.BulkUpdate(contatos);
         }
     }
 }
